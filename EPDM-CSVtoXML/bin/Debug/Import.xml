@@ -1,0 +1,24 @@
+<xml>
+  <transactions>
+    <transaction date="1292976000" type="wf_import_document_attributes" vaultname="Enter Vault Name">
+      <document aliasset="" id="Test-A.SLDPRT" idattribute="filename" idcfgname="" pdmweid="0">
+        <configuration name="">
+          <attribute name="description" value="PN-345678 A" />
+          <attribute name="number" value="123" />
+        </configuration>
+      </document>
+      <document aliasset="" id="Test-B.SLDPRT" idattribute="filename" idcfgname="" pdmweid="0">
+        <configuration name="">
+          <attribute name="description" value="PN-345678 B" />
+          <attribute name="number" value="456" />
+        </configuration>
+      </document>
+      <document aliasset="" id="Test-C.SLDPRT" idattribute="filename" idcfgname="" pdmweid="0">
+        <configuration name="">
+          <attribute name="description" value="PN-345678 C" />
+          <attribute name="number" value="789" />
+        </configuration>
+      </document>
+    </transaction>
+  </transactions>
+</xml>

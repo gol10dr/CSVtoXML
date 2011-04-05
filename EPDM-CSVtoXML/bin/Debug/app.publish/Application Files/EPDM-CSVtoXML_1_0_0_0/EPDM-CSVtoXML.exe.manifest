@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly manifestVersion="1.0" xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity version="1.0.0.0" name="EPDM-CSVtoXML.exe" publicKeyToken="4f247badfecf2c57" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="G.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="EPDM-CSVtoXML" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="EPDM-CSVtoXML.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPDM-CSVtoXML.exe" size="323584">
+      <assemblyIdentity name="EPDM-CSVtoXML" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>iRbP5mLxJpXicol8/kFiJu3VhJk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="G.ico" size="295606">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6GOdHS2QPo3g+lrw5lORVNVfZks=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=lvg-mbp\gol10dr" issuerKeyHash="9aff84c8fc7f752ad43692f0c378ddab62ab9a82" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>npmjhkJrH8upEI42/geoCYbftlc=</DigestValue></Reference></SignedInfo><SignatureValue>i8B/pfLbFyz6jENqrhmrpHI2EjzdpBKbW1pJn6x7U3FBHGjebCItEf4LTVZSw9Hy79aeRLhIbv+mzDvHIG2VL8hRaNkLdwVr0X/tPUYeoe/DhPU/Mh7Q4+cP2xfwEMQ2D81DN4WEuVqdwKFVRW65cOyfOq0Rt+u162+eYCiN+H4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sAGkN+ynd09ZU7MN6DegO3UDWVeDL9sp/w+OPvPlXXVBliWgXrKnT0tTsT3z5FE+iaFeF40XinLL37FQ7osuHczbB0+HqHgaz85AL0YMGcQiheWDZYFFf3/qFCRCJf0h3G5AhEW4NVFOpBNmtlegKVEbKHJlFW9SZJPX1Rg4lRk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="57b6df8609a807fe368e10a9cb1f6b4286a3999e" Description="" Url=""><as:assemblyIdentity version="1.0.0.0" name="EPDM-CSVtoXML.exe" publicKeyToken="4f247badfecf2c57" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=lvg-mbp\gol10dr</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>4ovw0U8j5eV/5oenbtBFD/B+K84=</DigestValue></Reference></SignedInfo><SignatureValue>BNNaO986b9EwPLRoPfqSLfWCmF/JYA547bSF+HAQTD6/4OgEtSMkFbejnu3GXKoMMFopLUajIgk4s8QFWtGuhG1vKF4UvdDMCiF51KmRdPnDZZBC4NPJmKIsnX1w7qCYavEbpYVLfo7WGhXrvOjyQKivWVkTo3GYbKJIxMSDkQA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sAGkN+ynd09ZU7MN6DegO3UDWVeDL9sp/w+OPvPlXXVBliWgXrKnT0tTsT3z5FE+iaFeF40XinLL37FQ7osuHczbB0+HqHgaz85AL0YMGcQiheWDZYFFf3/qFCRCJf0h3G5AhEW4NVFOpBNmtlegKVEbKHJlFW9SZJPX1Rg4lRk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQLD4HBO5Zk6VP4fwMV0IpWTANBgkqhkiG9w0BAQUFADApMScwJQYDVQQDHh4AbAB2AGcALQBtAGIAcABcAGcAbwBsADEAMABkAHIwHhcNMTEwMzMwMjA1NzUzWhcNMTIwMzMwMDI1NzUzWjApMScwJQYDVQQDHh4AbAB2AGcALQBtAGIAcABcAGcAbwBsADEAMABkAHIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALABpDfsp3dPWVOzDeg3oDt1A1lXgy/bKf8Pjj7z5V11QZYloF6yp09LU7E98+RRPomhXheNF4pyy9+xUO6LLh3M2wdPh6h4Gs/OQC9GDBnEIoXlg2WBRX9/6hQkQiX9IdxuQIRFuDVRTqQTZrZXoClRGyhyZRVvUmST19UYOJUZAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAWYHMhqydni9WES0+l7HF5YVJEa1DDubiRZOnSTlKrur0lMADtFs5q/Uw4VVSAfsx9f+yto+tYsGQMoGF0Y7Phl/4QSeiUAU3oWUhmMGZcdtt5RokmVrryaCKqNERN31X3pvGQjNCYDqrxoHZCkJE+SlJiLw7OYBnuHvGYtgF/tY=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
