@@ -4,7 +4,7 @@ Imports System.Xml
 Public Class EPDMCSV2XML
     'Select file path for csv import
     Private Sub csvbutton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles csvbutton.Click
-        OpenFileDialog1.Title = "Select a source csv to convert..."
+        OpenFileDialog1.Title = "Select a source CSV to convert..."
         OpenFileDialog1.InitialDirectory = "C:\"
 
         OpenFileDialog1.ShowDialog()
@@ -28,7 +28,7 @@ Public Class EPDMCSV2XML
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
         ' Read into an array of strings.
-        Dim source As String() = File.ReadAllLines(csvpath.text)
+        Dim source As String() = File.ReadAllLines(csvpath.Text)
         Dim importxml As XElement = _
             <xml>
                 <transactions>
@@ -36,13 +36,13 @@ Public Class EPDMCSV2XML
                         <%= From strs In source _
                             Let fields = Split(strs, ",") _
                             Select _
-                            <document aliasset=<%= fields(0) %> id=<%= fields(1) %> idattribute=<%= fields(2) %> idcfgname=<%= fields(3) %> pdmweid=<%= fields(4) %>>
-                                <configuration name=<%= fields(5) %>>
+                            <document aliasset="" id=<%= fields(0) %> idattribute=<%= fields(1) %> idcfgname=<%= fields(2) %> pdmweid="0">
+                                <configuration name=<%= fields(3) %>>
+                                    <attribute name=<%= fields(4) %> value=<%= fields(5) %>/>
                                     <attribute name=<%= fields(6) %> value=<%= fields(7) %>/>
                                     <attribute name=<%= fields(8) %> value=<%= fields(9) %>/>
                                     <attribute name=<%= fields(10) %> value=<%= fields(11) %>/>
                                     <attribute name=<%= fields(12) %> value=<%= fields(13) %>/>
-                                    <attribute name=<%= fields(14) %> value=<%= fields(15) %>/>
                                 </configuration>
                             </document> %>
                     </transaction>
@@ -50,8 +50,11 @@ Public Class EPDMCSV2XML
             </xml>
         Console.WriteLine(importxml)
         File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
-        MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new xml is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly
+        MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly
                )
     End Sub
 
+    Private Sub VaultNameEntry_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VaultNameEntry.TextChanged
+
+    End Sub
 End Class

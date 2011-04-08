@@ -120,7 +120,7 @@ Partial Class EPDMCSV2XML
         '
         Me.xmlpath.Location = New System.Drawing.Point(13, 19)
         Me.xmlpath.Name = "xmlpath"
-        Me.xmlpath.Size = New System.Drawing.Size(220, 20)
+        Me.xmlpath.Size = New System.Drawing.Size(198, 20)
         Me.xmlpath.TabIndex = 0
         Me.xmlpath.Text = "c:\temp\"
         '
