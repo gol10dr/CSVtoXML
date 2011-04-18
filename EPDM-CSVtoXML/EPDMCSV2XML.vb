@@ -34,8 +34,8 @@ Public Class EPDMCSV2XML
                 <transactions>
                     <transaction date="1292976000" type="wf_import_document_attributes" vaultname=<%= VaultNameEntry.Text %>>
                         <%= From strs In source _
-                            Let fields = Split(strs, ",") _
-                            Select _
+                            Let fields = Split(strs, ",")
+                            Where Not fields(0) = "id" Select _
                             <document aliasset="" id=<%= fields(0) %> idattribute=<%= fields(1) %> idcfgname=<%= fields(2) %> pdmweid="0">
                                 <configuration name=<%= fields(3) %>>
                                     <attribute name=<%= fields(4) %> value=<%= fields(5) %>/>
