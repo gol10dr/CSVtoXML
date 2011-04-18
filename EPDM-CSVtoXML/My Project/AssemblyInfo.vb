@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("WindowsApplication1")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
-<Assembly: AssemblyProduct("WindowsApplication1")> 
-<Assembly: AssemblyCopyright("Copyright © Microsoft 2011")> 
+<Assembly: AssemblyTitle("EPDM CSV2XML")> 
+<Assembly: AssemblyDescription("CSV to XML utility for SolidWorks EPDM")> 
+<Assembly: AssemblyCompany("Digital Dimensions, Inc.")> 
+<Assembly: AssemblyProduct("CSV2XML")> 
+<Assembly: AssemblyCopyright("Copyright © Digital Dimensions, Inc.  2011")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

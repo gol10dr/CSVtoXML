@@ -70,7 +70,7 @@ Partial Class EPDMCSV2XML
         '
         Me.GroupBox2.Controls.Add(Me.csvbutton)
         Me.GroupBox2.Controls.Add(Me.csvpath)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 74)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 72)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(239, 51)
         Me.GroupBox2.TabIndex = 2
