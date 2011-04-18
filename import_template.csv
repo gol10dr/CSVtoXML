@@ -1,0 +1,4 @@
+id,idattribute,idcfgname,configuration name,attribute1,value1,attribute2,value2,attribute3,value3,atribute4,value4,attribute5,value5  
+Test-A.SLDPRT,filename,,,description,Motor Mount Test A,number,PN-12345,cost,$7.95,material,SS,vendor,ACME
+Test-B.SLDPRT,filename,,,description,PSide Bracket Mount B,number,PN-56789,cost,$5.67,material,Brass,vendor,Brackets Unlimited
+Test-C.SLDPRT,filename,,,description,Ratchet Arm Side C,number,PN-91011,cost,$3.45,material,PP,vendor,SafeCo
