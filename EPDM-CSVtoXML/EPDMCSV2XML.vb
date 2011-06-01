@@ -27,12 +27,29 @@ Public Class EPDMCSV2XML
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
+        ' Determine EPOCH Date
+        Dim curdate As Date = ImportDate.Text
+        Dim tdate As Integer
+        tdate = CInt(curdate.Subtract(CDate("1.1.1970 00:00:00")).TotalSeconds)
+
+        ' Determine import type
+        Dim ttype As String = Nothing
+        If ImportType.Text = "Variable Values" Then
+            ttype = "wf_import_document_attributes"
+        ElseIf ImportType.Text = "List Vaules" Then
+            ttype = "import_lists"
+        ElseIf ImportType.Text = "Serial Numbers" Then
+            ttype = "import_serial_numbers"
+        ElseIf ImportType.Text = "Notifications" Then
+            ttype = "import_notifications"
+        End If
+
         ' Read into an array of strings.
         Dim source As String() = File.ReadAllLines(csvpath.Text)
         Dim importxml As XElement = _
             <xml>
                 <transactions>
-                    <transaction date="1292976000" type="wf_import_document_attributes" vaultname=<%= VaultNameEntry.Text %>>
+                    <transaction date=<%= tdate %> type=<%= ttype %> vaultname=<%= VaultNameEntry.Text %>>
                         <%= From strs In source _
                             Let fields = Split(strs, ",")
                             Where Not fields(0) = "id" Select _
@@ -54,7 +71,11 @@ Public Class EPDMCSV2XML
                )
     End Sub
 
-    Private Sub VaultNameEntry_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VaultNameEntry.TextChanged
-
+    Private Sub ImportType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImportType.SelectedValueChanged
+        If ImportType.Text = "Serial Numbers" Then
+            ImportMode.Visible = True
+        Else : ImportMode.Visible = False
+        End If
     End Sub
+
 End Class

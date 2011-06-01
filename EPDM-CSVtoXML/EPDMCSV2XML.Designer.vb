@@ -34,16 +34,26 @@ Partial Class EPDMCSV2XML
         Me.xmlpath = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.ImportType = New System.Windows.Forms.ComboBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.ImportMode = New System.Windows.Forms.ComboBox()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ImportDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(87, 192)
+        Me.Button1.Location = New System.Drawing.Point(213, 180)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(90, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Convert"
         Me.Button1.UseVisualStyleBackColor = True
@@ -60,7 +70,7 @@ Partial Class EPDMCSV2XML
         '
         'VaultNameEntry
         '
-        Me.VaultNameEntry.Location = New System.Drawing.Point(13, 19)
+        Me.VaultNameEntry.Location = New System.Drawing.Point(19, 19)
         Me.VaultNameEntry.Name = "VaultNameEntry"
         Me.VaultNameEntry.Size = New System.Drawing.Size(220, 20)
         Me.VaultNameEntry.TabIndex = 0
@@ -70,7 +80,7 @@ Partial Class EPDMCSV2XML
         '
         Me.GroupBox2.Controls.Add(Me.csvbutton)
         Me.GroupBox2.Controls.Add(Me.csvpath)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 72)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 66)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(239, 51)
         Me.GroupBox2.TabIndex = 2
@@ -99,7 +109,7 @@ Partial Class EPDMCSV2XML
         '
         Me.GroupBox3.Controls.Add(Me.xmlbutton)
         Me.GroupBox3.Controls.Add(Me.xmlpath)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 135)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 123)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(239, 51)
         Me.GroupBox3.TabIndex = 3
@@ -128,11 +138,79 @@ Partial Class EPDMCSV2XML
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'ImportType
+        '
+        Me.ImportType.FormattingEnabled = True
+        Me.ImportType.Items.AddRange(New Object() {"Variable Values", "List Values", "Serial Numbers", "Notifications"})
+        Me.ImportType.Location = New System.Drawing.Point(6, 18)
+        Me.ImportType.Name = "ImportType"
+        Me.ImportType.Size = New System.Drawing.Size(220, 21)
+        Me.ImportType.TabIndex = 4
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.ImportType)
+        Me.GroupBox4.Location = New System.Drawing.Point(265, 9)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(233, 51)
+        Me.GroupBox4.TabIndex = 2
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Import Type:"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.ImportMode)
+        Me.GroupBox5.Location = New System.Drawing.Point(265, 66)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(233, 51)
+        Me.GroupBox5.TabIndex = 5
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Import Mode: (serial numbers only)"
+        '
+        'ImportMode
+        '
+        Me.ImportMode.FormattingEnabled = True
+        Me.ImportMode.Items.AddRange(New Object() {"append", "replace"})
+        Me.ImportMode.Location = New System.Drawing.Point(6, 18)
+        Me.ImportMode.Name = "ImportMode"
+        Me.ImportMode.Size = New System.Drawing.Size(220, 21)
+        Me.ImportMode.TabIndex = 4
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.ImportDate)
+        Me.GroupBox6.Location = New System.Drawing.Point(265, 123)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(233, 51)
+        Me.GroupBox6.TabIndex = 5
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Import Date:"
+        '
+        'ImportDate
+        '
+        Me.ImportDate.Location = New System.Drawing.Point(6, 25)
+        Me.ImportDate.Name = "ImportDate"
+        Me.ImportDate.Size = New System.Drawing.Size(220, 20)
+        Me.ImportDate.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(370, 184)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Label1"
+        '
         'EPDMCSV2XML
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(253, 227)
+        Me.ClientSize = New System.Drawing.Size(510, 209)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox6)
+        Me.Controls.Add(Me.GroupBox5)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -146,7 +224,11 @@ Partial Class EPDMCSV2XML
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -160,5 +242,12 @@ Partial Class EPDMCSV2XML
     Friend WithEvents xmlbutton As System.Windows.Forms.Button
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents ImportType As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents ImportMode As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents ImportDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class
