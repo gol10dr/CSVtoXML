@@ -25,14 +25,21 @@ Public Class EPDMCSV2XML
         FolderBrowserDialog1.ShowDialog()
         xmlpath.Text = FolderBrowserDialog1.SelectedPath.ToString()
     End Sub
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub ConvertButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConvertButton.Click
 
         ' Determine EPOCH Date
         Dim curdate As Date = ImportDate.Text
         Dim tdate As Integer
         tdate = CInt(curdate.Subtract(CDate("1.1.1970 00:00:00")).TotalSeconds)
+        EPOC_Label.Text = tdate
 
-        ' Determine import type
+        ' Check to see if a vault name has been entered
+        If VaultNameEntry.Text = "Enter Vault Name" Then
+            MsgBox("Please enter a valid valut name before converting", MsgBoxStyle.OkOnly)
+            Exit Sub
+        End If
+
+        ' Determine import type and if missing prompt
         Dim ttype As String = Nothing
         If ImportType.Text = "Variable Values" Then
             ttype = "wf_import_document_attributes"
@@ -42,6 +49,21 @@ Public Class EPDMCSV2XML
             ttype = "import_serial_numbers"
         ElseIf ImportType.Text = "Notifications" Then
             ttype = "import_notifications"
+        Else
+            MsgBox("Please select an import type from the list", MsgBoxStyle.OkOnly)
+            Exit Sub
+        End If
+
+        ' Check to see if a csv file has been selected
+        If csvpath.Text = "Select csv file..." Then
+            MsgBox("Please browse for a csv file before converting", MsgBoxStyle.OkOnly)
+            Exit Sub
+        End If
+
+        ' Check for serial numbers type is selected
+        If ttype = "import_serial_numbers" And ImportMode.Text = "" Then
+            MsgBox("Please select an import mode from the list", MsgBoxStyle.OkOnly)
+            Exit Sub
         End If
 
         ' Read into an array of strings.
@@ -67,8 +89,7 @@ Public Class EPDMCSV2XML
             </xml>
         Console.WriteLine(importxml)
         File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
-        MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly
-               )
+        MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
     End Sub
 
     Private Sub ImportType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImportType.SelectedValueChanged

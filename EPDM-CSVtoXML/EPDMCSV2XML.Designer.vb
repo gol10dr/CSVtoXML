@@ -23,7 +23,7 @@ Partial Class EPDMCSV2XML
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EPDMCSV2XML))
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ConvertButton = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.VaultNameEntry = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -41,6 +41,7 @@ Partial Class EPDMCSV2XML
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ImportDate = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.EPOC_Label = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -49,14 +50,15 @@ Partial Class EPDMCSV2XML
         Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Button1
+        'ConvertButton
         '
-        Me.Button1.Location = New System.Drawing.Point(213, 180)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(90, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Convert"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ConvertButton.Location = New System.Drawing.Point(213, 180)
+        Me.ConvertButton.Name = "ConvertButton"
+        Me.ConvertButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ConvertButton.Size = New System.Drawing.Size(90, 23)
+        Me.ConvertButton.TabIndex = 0
+        Me.ConvertButton.Text = "Convert"
+        Me.ConvertButton.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -70,7 +72,7 @@ Partial Class EPDMCSV2XML
         '
         'VaultNameEntry
         '
-        Me.VaultNameEntry.Location = New System.Drawing.Point(19, 19)
+        Me.VaultNameEntry.Location = New System.Drawing.Point(13, 19)
         Me.VaultNameEntry.Name = "VaultNameEntry"
         Me.VaultNameEntry.Size = New System.Drawing.Size(220, 20)
         Me.VaultNameEntry.TabIndex = 0
@@ -175,6 +177,7 @@ Partial Class EPDMCSV2XML
         Me.ImportMode.Name = "ImportMode"
         Me.ImportMode.Size = New System.Drawing.Size(220, 21)
         Me.ImportMode.TabIndex = 4
+        Me.ImportMode.Visible = False
         '
         'GroupBox6
         '
@@ -198,15 +201,24 @@ Partial Class EPDMCSV2XML
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(370, 184)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Label1"
+        '
+        'EPOC_Label
+        '
+        Me.EPOC_Label.AutoSize = True
+        Me.EPOC_Label.Location = New System.Drawing.Point(331, 184)
+        Me.EPOC_Label.Name = "EPOC_Label"
+        Me.EPOC_Label.Size = New System.Drawing.Size(36, 13)
+        Me.EPOC_Label.TabIndex = 7
+        Me.EPOC_Label.Text = "EPOC"
         '
         'EPDMCSV2XML
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(510, 209)
+        Me.Controls.Add(Me.EPOC_Label)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox5)
@@ -214,7 +226,7 @@ Partial Class EPDMCSV2XML
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ConvertButton)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EPDMCSV2XML"
         Me.Text = "EPDM CSVXML"
@@ -231,7 +243,7 @@ Partial Class EPDMCSV2XML
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents ConvertButton As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents VaultNameEntry As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
@@ -249,5 +261,6 @@ Partial Class EPDMCSV2XML
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents ImportDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents EPOC_Label As System.Windows.Forms.Label
 
 End Class
