@@ -37,6 +37,7 @@ Partial Class EPDMCSV2XML
         Me.ImportType = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.SerialNoName = New System.Windows.Forms.TextBox()
         Me.ImportMode = New System.Windows.Forms.ComboBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ImportDate = New System.Windows.Forms.DateTimePicker()
@@ -161,6 +162,7 @@ Partial Class EPDMCSV2XML
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.SerialNoName)
         Me.GroupBox5.Controls.Add(Me.ImportMode)
         Me.GroupBox5.Location = New System.Drawing.Point(265, 66)
         Me.GroupBox5.Name = "GroupBox5"
@@ -169,15 +171,25 @@ Partial Class EPDMCSV2XML
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Import Mode: (serial numbers only)"
         '
+        'SerialNoName
+        '
+        Me.SerialNoName.AccessibleName = ""
+        Me.SerialNoName.Enabled = False
+        Me.SerialNoName.Location = New System.Drawing.Point(98, 17)
+        Me.SerialNoName.Name = "SerialNoName"
+        Me.SerialNoName.Size = New System.Drawing.Size(128, 20)
+        Me.SerialNoName.TabIndex = 1
+        Me.SerialNoName.Text = "Enter Serial No. Name"
+        '
         'ImportMode
         '
+        Me.ImportMode.Enabled = False
         Me.ImportMode.FormattingEnabled = True
         Me.ImportMode.Items.AddRange(New Object() {"append", "replace"})
-        Me.ImportMode.Location = New System.Drawing.Point(6, 18)
+        Me.ImportMode.Location = New System.Drawing.Point(6, 17)
         Me.ImportMode.Name = "ImportMode"
-        Me.ImportMode.Size = New System.Drawing.Size(220, 21)
+        Me.ImportMode.Size = New System.Drawing.Size(86, 21)
         Me.ImportMode.TabIndex = 4
-        Me.ImportMode.Visible = False
         '
         'GroupBox6
         '
@@ -209,9 +221,9 @@ Partial Class EPDMCSV2XML
         Me.EPOC_Label.AutoSize = True
         Me.EPOC_Label.Location = New System.Drawing.Point(331, 184)
         Me.EPOC_Label.Name = "EPOC_Label"
-        Me.EPOC_Label.Size = New System.Drawing.Size(36, 13)
+        Me.EPOC_Label.Size = New System.Drawing.Size(76, 13)
         Me.EPOC_Label.TabIndex = 7
-        Me.EPOC_Label.Text = "EPOC"
+        Me.EPOC_Label.Text = "EPOC Number"
         '
         'EPDMCSV2XML
         '
@@ -238,6 +250,7 @@ Partial Class EPDMCSV2XML
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -262,5 +275,6 @@ Partial Class EPDMCSV2XML
     Friend WithEvents ImportDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents EPOC_Label As System.Windows.Forms.Label
+    Friend WithEvents SerialNoName As System.Windows.Forms.TextBox
 
 End Class

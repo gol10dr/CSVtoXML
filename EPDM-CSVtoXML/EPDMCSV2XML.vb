@@ -31,7 +31,7 @@ Public Class EPDMCSV2XML
         Dim curdate As Date = ImportDate.Text
         Dim tdate As Integer
         tdate = CInt(curdate.Subtract(CDate("1.1.1970 00:00:00")).TotalSeconds)
-        EPOC_Label.Text = tdate
+        'EPOC_Label.Text = tdate
 
         ' Check to see if a vault name has been entered
         If VaultNameEntry.Text = "Enter Vault Name" Then
@@ -43,7 +43,7 @@ Public Class EPDMCSV2XML
         Dim ttype As String = Nothing
         If ImportType.Text = "Variable Values" Then
             ttype = "wf_import_document_attributes"
-        ElseIf ImportType.Text = "List Vaules" Then
+        ElseIf ImportType.Text = "List Values" Then
             ttype = "import_lists"
         ElseIf ImportType.Text = "Serial Numbers" Then
             ttype = "import_serial_numbers"
@@ -66,37 +66,91 @@ Public Class EPDMCSV2XML
             Exit Sub
         End If
 
-        ' Read into an array of strings.
-        Dim source As String() = File.ReadAllLines(csvpath.Text)
-        Dim importxml As XElement = _
-            <xml>
-                <transactions>
-                    <transaction date=<%= tdate %> type=<%= ttype %> vaultname=<%= VaultNameEntry.Text %>>
-                        <%= From strs In source _
-                            Let fields = Split(strs, ",")
-                            Where Not fields(0) = "id" Select _
-                            <document aliasset="" id=<%= fields(0) %> idattribute=<%= fields(1) %> idcfgname=<%= fields(2) %> pdmweid="0">
-                                <configuration name=<%= fields(3) %>>
-                                    <attribute name=<%= fields(4) %> value=<%= fields(5) %>/>
-                                    <attribute name=<%= fields(6) %> value=<%= fields(7) %>/>
-                                    <attribute name=<%= fields(8) %> value=<%= fields(9) %>/>
-                                    <attribute name=<%= fields(10) %> value=<%= fields(11) %>/>
-                                    <attribute name=<%= fields(12) %> value=<%= fields(13) %>/>
-                                </configuration>
-                            </document> %>
-                    </transaction>
-                </transactions>
-            </xml>
-        Console.WriteLine(importxml)
-        File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
-        MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
+        'Determine which XML format to use
+        If ttype = "wf_import_document_attributes" Then
+
+            ' Read into an array of strings.
+            Dim source As String() = File.ReadAllLines(csvpath.Text)
+            Dim importxml As XElement = _
+                <xml>
+                    <transactions>
+                        <transaction date=<%= tdate %> type=<%= ttype %> vaultname=<%= VaultNameEntry.Text %>>
+                            <%= From strs In source _
+                                Let fields = Split(strs, ",")
+                                Where Not fields(0) = "id" Select _
+                                <document aliasset="" id=<%= fields(0) %> idattribute=<%= fields(1) %> idcfgname=<%= fields(2) %> pdmweid="0">
+                                    <configuration name=<%= fields(3) %>>
+                                        <attribute name=<%= fields(4) %> value=<%= fields(5) %>/>
+                                        <attribute name=<%= fields(6) %> value=<%= fields(7) %>/>
+                                        <attribute name=<%= fields(8) %> value=<%= fields(9) %>/>
+                                        <attribute name=<%= fields(10) %> value=<%= fields(11) %>/>
+                                        <attribute name=<%= fields(12) %> value=<%= fields(13) %>/>
+                                    </configuration>
+                                </document> %>
+                        </transaction>
+                    </transactions>
+                </xml>
+            Console.WriteLine(importxml)
+            File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
+            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
+        ElseIf ttype = "import_lists" Then
+            ' MsgBox("List variable format, not implemented yet!", MsgBoxStyle.OkOnly)
+            ' Read into an array of strings.
+            Dim source As String() = File.ReadAllLines(csvpath.Text)
+            Dim importxml As XElement = _
+                <xml>
+                    <transactions>
+                        <transaction date=<%= tdate %> type=<%= ttype %> vaultname=<%= VaultNameEntry.Text %>>
+                            <%= From strs In source _
+                                Let fields = Split(strs, ",")
+                                Where Not fields(0) = "List Name" Select _
+                                <list name=<%= fields(0) %>>
+                                    <item item_name=<%= fields(1) %>/>
+                                    <link source_variable=<%= fields(2) %> list_variable=<%= fields(3) %> link_value=<%= fields(4) %>/>
+                                </list> %>
+                        </transaction>
+                    </transactions>
+                </xml>
+            Console.WriteLine(importxml)
+            File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
+            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
+        ElseIf ttype = "import_serial_numbers" Then
+            'MsgBox("Serial Number format, not implemented yet!", MsgBoxStyle.OkOnly)
+            ' Read into an array of strings
+            Dim source As String() = File.ReadAllLines(csvpath.Text)
+            Dim importxml As XElement = _
+                <xml>
+                    <transactions>
+                        <transaction date=<%= tdate %> type=<%= ttype %> vaultname=<%= VaultNameEntry.Text %>>
+                            <%= From strs In source _
+                                Let fields = Split(strs, ",")
+                                Where Not fields(0) = "sn name" Select _
+                                <serial_number name=<%= fields(0) %> mode=<%= ImportMode.Text %>>
+                                    <serno_item item_counter=<%= fields(1) %> item_value=<%= fields(2) %>/>
+                                </serial_number> %>
+                        </transaction>
+                    </transactions>
+                </xml>
+            Console.WriteLine(importxml)
+            File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
+            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
+
+            ElseIf ttype = "import_notifications" Then
+                MsgBox("Notification format, not implemented yet!", MsgBoxStyle.OkOnly)
+            End If
+
     End Sub
 
     Private Sub ImportType_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImportType.SelectedValueChanged
         If ImportType.Text = "Serial Numbers" Then
-            ImportMode.Visible = True
-        Else : ImportMode.Visible = False
+            ImportMode.Enabled = True
+        Else : ImportMode.Enabled = False
         End If
     End Sub
-
+    Private Sub ImportMode_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImportMode.SelectedIndexChanged
+        If ImportMode.Text = "replace" Then
+            SerialNoName.Enabled = True
+        Else : SerialNoName.Enabled = False
+        End If
+    End Sub
 End Class
