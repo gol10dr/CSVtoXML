@@ -135,7 +135,7 @@ Partial Class EPDMCSV2XML
         Me.xmlpath.Name = "xmlpath"
         Me.xmlpath.Size = New System.Drawing.Size(198, 20)
         Me.xmlpath.TabIndex = 0
-        Me.xmlpath.Text = "c:\temp\"
+        Me.xmlpath.Text = "Select XML output path..."
         '
         'OpenFileDialog1
         '
@@ -224,6 +224,7 @@ Partial Class EPDMCSV2XML
         Me.EPOC_Label.Size = New System.Drawing.Size(76, 13)
         Me.EPOC_Label.TabIndex = 7
         Me.EPOC_Label.Text = "EPOC Number"
+        Me.EPOC_Label.Visible = False
         '
         'EPDMCSV2XML
         '
@@ -239,8 +240,10 @@ Partial Class EPDMCSV2XML
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ConvertButton)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EPDMCSV2XML"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EPDM CSVXML"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

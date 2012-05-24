@@ -35,7 +35,7 @@ Public Class EPDMCSV2XML
 
         ' Check to see if a vault name has been entered
         If VaultNameEntry.Text = "Enter Vault Name" Then
-            MsgBox("Please enter a valid valut name before converting", MsgBoxStyle.OkOnly)
+            MsgBox("Please enter a valid vault name before converting", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
@@ -50,19 +50,25 @@ Public Class EPDMCSV2XML
         ElseIf ImportType.Text = "Notifications" Then
             ttype = "import_notifications"
         Else
-            MsgBox("Please select an import type from the list", MsgBoxStyle.OkOnly)
+            MsgBox("Please select an import type from the list!", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
         ' Check to see if a csv file has been selected
         If csvpath.Text = "Select csv file..." Then
-            MsgBox("Please browse for a csv file before converting", MsgBoxStyle.OkOnly)
+            MsgBox("Please browse for a csv file before converting!", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
+        ' Check to see if an XML file output location has been selected
+        If xmlpath.Text = "Select XML output path..." Then
+            MsgBox("Please browse for an XML output path before converting!", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
         ' Check for serial numbers type is selected
         If ttype = "import_serial_numbers" And ImportMode.Text = "" Then
-            MsgBox("Please select an import mode from the list", MsgBoxStyle.OkOnly)
+            MsgBox("Please select an import mode from the list", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
@@ -92,7 +98,7 @@ Public Class EPDMCSV2XML
                 </xml>
             Console.WriteLine(importxml)
             File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
-            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
+            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.Information)
         ElseIf ttype = "import_lists" Then
             ' MsgBox("List variable format, not implemented yet!", MsgBoxStyle.OkOnly)
             ' Read into an array of strings.
@@ -113,7 +119,7 @@ Public Class EPDMCSV2XML
                 </xml>
             Console.WriteLine(importxml)
             File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
-            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
+            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML file is located here: " + xmlpath.Text, MsgBoxStyle.Information)
         ElseIf ttype = "import_serial_numbers" Then
             'MsgBox("Serial Number format, not implemented yet!", MsgBoxStyle.OkOnly)
             ' Read into an array of strings
@@ -133,10 +139,10 @@ Public Class EPDMCSV2XML
                 </xml>
             Console.WriteLine(importxml)
             File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
-            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.OkOnly)
+            MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.Information)
 
             ElseIf ttype = "import_notifications" Then
-                MsgBox("Notification format, not implemented yet!", MsgBoxStyle.OkOnly)
+            MsgBox("Notification format, not implemented yet!", MsgBoxStyle.Information)
             End If
 
     End Sub
