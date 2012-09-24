@@ -97,7 +97,7 @@ Public Class EPDMCSV2XML
                     </transactions>
                 </xml>
             Console.WriteLine(importxml)
-            File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
+            File.WriteAllText((xmlpath.Text + "\var_import_" + Now.Ticks + ".xml"), importxml.ToString)
             MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.Information)
         ElseIf ttype = "import_lists" Then
             ' MsgBox("List variable format, not implemented yet!", MsgBoxStyle.OkOnly)
@@ -118,7 +118,7 @@ Public Class EPDMCSV2XML
                     </transactions>
                 </xml>
             Console.WriteLine(importxml)
-            File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
+            File.WriteAllText((xmlpath.Text + "\list_import" + Now.Ticks + ".xml"), importxml.ToString)
             MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML file is located here: " + xmlpath.Text, MsgBoxStyle.Information)
         ElseIf ttype = "import_serial_numbers" Then
             'MsgBox("Serial Number format, not implemented yet!", MsgBoxStyle.OkOnly)
@@ -138,12 +138,12 @@ Public Class EPDMCSV2XML
                     </transactions>
                 </xml>
             Console.WriteLine(importxml)
-            File.WriteAllText((xmlpath.Text + "\import.xml"), importxml.ToString)
+            File.WriteAllText((xmlpath.Text + "\serialnum_import" + Now.Ticks + ".xml"), importxml.ToString)
             MsgBox("The file '" + csvpath.Text + "' has been converted!" + vbCrLf + "The new XML is located here: " + xmlpath.Text, MsgBoxStyle.Information)
 
-            ElseIf ttype = "import_notifications" Then
+        ElseIf ttype = "import_notifications" Then
             MsgBox("Notification format, not implemented yet!", MsgBoxStyle.Information)
-            End If
+        End If
 
     End Sub
 

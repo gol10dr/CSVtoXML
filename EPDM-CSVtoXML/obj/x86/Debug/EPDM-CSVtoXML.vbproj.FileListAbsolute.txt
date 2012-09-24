@@ -28,3 +28,16 @@ C:\Users\gol10dr\Documents\My Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\R
 C:\Users\gol10dr\Documents\My Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\ResGen.write.1.tlog
 C:\Users\gol10dr\Documents\My Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.exe.manifest
 C:\Users\gol10dr\Documents\My Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.application
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.exe
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.xml
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.pdb
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\bin\Debug\EPDM-CSVtoXML.exe.manifest
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\bin\Debug\EPDM-CSVtoXML.application
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\bin\Debug\EPDM-CSVtoXML.exe
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\bin\Debug\EPDM-CSVtoXML.pdb
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\bin\Debug\EPDM-CSVtoXML.xml
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\WindowsApplication1.EPDMCSV2XML.resources
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.vbproj.GenerateResource.Cache
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.exe.manifest
+C:\Users\gol10dr\Dropbox\GIT\CSVtoXML\EPDM-CSVtoXML\obj\x86\Debug\EPDM-CSVtoXML.application
